@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 @WebServlet(name = "FirstServlet", urlPatterns = {"/Hello"})
 public class Hello extends HttpServlet // Inheriting from HttpServlet makes this a servlet
 {
+@Override
 public void doGet (HttpServletRequest request, HttpServletResponse response)
                 throws ServletException, IOException
 {
