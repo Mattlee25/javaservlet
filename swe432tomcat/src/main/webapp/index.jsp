@@ -14,6 +14,8 @@
 <h2>Hello Heroku! I am JSP</h2>
 <strong>Current Time is</strong>: <%=new Date() %>
 <p>Try a: </p>
+    
+<button onclick="window.location.assign(servletURL+'/myTwoButtons');">SWE 432 in-class-3</button>
 <button onclick="window.location.assign(servletURL+'/Hello');">SWE 432 in-class-3</button>
 <button onclick="window.location.assign(servletURL+'/hello');">Simple servlet </button>
 <button onclick="window.location.assign(servletURL+'/echo');">Echo POST requests servlet </button>
