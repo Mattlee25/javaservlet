@@ -1,9 +1,7 @@
-package javaservlet;
-
 /** *****************************************************************
 twoButtons.java   servlet example
 
-    @author Matthew Lee
+    @author Jeff Offutt
 ********************************************************************* */
 
 //Import Java Libraries
@@ -35,9 +33,17 @@ import javax.servlet.annotation.WebServlet;
 public class twoButtons extends HttpServlet
 {
 
+//Location of servlet.
+static String Domain  = "cs.gmu.edu:8443";
+static String Path    = "/offutt/servlet/";
+static String Servlet = "twoButtons";
+
 //Button labels
-static String OperationAdd = "stringAstringB";
-static String OperationSub = "stringBstringA";
+static String OperationAdd = "Add";
+static String OperationSub = "Subtract";
+
+//Other strings.
+static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 
 /** *****************************************************
 *  Overrides HttpServlet's doPost().
