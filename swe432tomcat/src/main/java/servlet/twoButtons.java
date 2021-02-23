@@ -1,7 +1,7 @@
 /** *****************************************************************
 twoButtons.java   servlet example
 
-    @author Jeff Offutt
+    @author Matthew Lee
 ********************************************************************* */
 
 //Import Java Libraries
@@ -39,8 +39,8 @@ static String Path    = "/offutt/servlet/";
 static String Servlet = "twoButtons";
 
 //Button labels
-static String OperationAdd = "Add";
-static String OperationSub = "Subtract";
+static String OperationAdd = "stringAstringB";
+static String OperationSub = "stringBstringA";
 
 //Other strings.
 static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
@@ -54,24 +54,20 @@ static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
 public void doPost (HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException
 {
-Float rslt   = new Float(0.0);
-Float lhsVal = new Float(0.0);
-Float rhsVal = new Float(0.0);
+String rslt   = new String("");
+String lhsVal = new String("");
+String rhsVal = new String("");
 String operation = request.getParameter("Operation");
 String lhsStr = request.getParameter("LHS");
 String rhsStr = request.getParameter("RHS");
-if ((lhsStr != null) && (lhsStr.length() > 0))
-  lhsVal = new Float(lhsStr);
-if ((rhsStr != null) && (rhsStr.length() > 0))
-  rhsVal = new Float(rhsStr);
 
-if (operation.equals(OperationAdd))
+if (operation.equals(stringAstringB))
 {
-  rslt = new Float(lhsVal.floatValue() + rhsVal.floatValue());
+  rslt = new String(lhsVal + rhsVal);
 }
-else if (operation.equals(OperationSub))
+else if (operation.equals(stringBstringA))
 {
-  rslt = new Float(lhsVal.floatValue() - rhsVal.floatValue());
+  rslt = new String(lhsVal+ rhsVal);
 }
 
 response.setContentType("text/html");
@@ -140,8 +136,8 @@ out.println("  </tr>");
 out.println(" </table>");
 out.println(" <br>");
 out.println(" <br>");
-out.println(" <input type=\"submit\" value=\"" + OperationAdd + "\" name=\"Operation\">");
-out.println(" <input type=\"submit\" value=\"" + OperationSub + "\" name=\"Operation\">");
+out.println(" <input type=\"submit\" value=\"" + stringAstringB + "\" name=\"Operation\">");
+out.println(" <input type=\"submit\" value=\"" + stringBStringA + "\" name=\"Operation\">");
 out.println(" <input type=\"reset\" value=\"Reset\" name=\"reset\">");
 out.println("</form>");
 out.println("");
