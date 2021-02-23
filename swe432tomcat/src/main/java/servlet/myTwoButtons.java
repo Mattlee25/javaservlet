@@ -26,7 +26,7 @@ import javax.servlet.http.*;
 //              Fields are filled from the parameters.
 // private void PrintTail (PrintWriter out) --> Prints the HTML bottom
 //***********************************************************************
-@WebServlet(name = "FirstServlet", urlPatterns = {"/Hello"})
+@WebServlet(name = "MyTwoButtons", urlPatterns = {"/Hello"})
 
 public class twoButtons extends HttpServlet
 {
