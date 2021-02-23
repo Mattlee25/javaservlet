@@ -39,8 +39,8 @@ static String Path    = "/offutt/servlet/";
 static String Servlet = "twoButtons";
 
 //Button labels
-static String OperationAdd = "stringAstringB";
-static String OperationSub = "stringBstringA";
+static String stringBConcat = "stringAstringB";
+static String stringAConcat = "stringBstringA";
 
 //Other strings.
 static String Style ="https://www.cs.gmu.edu/~offutt/classes/432/432-style.css";
@@ -61,11 +61,11 @@ String operation = request.getParameter("Operation");
 String lhsStr = request.getParameter("LHS");
 String rhsStr = request.getParameter("RHS");
 
-if (operation.equals(stringAstringB))
+if (operation.equals(stringBConcat))
 {
   rslt = new String(lhsVal + rhsVal);
 }
-else if (operation.equals(stringBstringA))
+else if (operation.equals(stringAConcat))
 {
   rslt = new String(lhsVal+ rhsVal);
 }
