@@ -33,11 +33,6 @@ import javax.servlet.annotation.WebServlet;
 public class twoButtons extends HttpServlet
 {
 
-//Location of servlet.
-static String Domain  = "cs.gmu.edu:8443";
-static String Path    = "/offutt/servlet/";
-static String Servlet = "twoButtons";
-
 //Button labels
 static String stringBConcat = "stringAstringB";
 static String stringAConcat = "stringBstringA";
@@ -63,17 +58,17 @@ String rhsStr = request.getParameter("RHS");
 
 if (operation.equals(stringBConcat))
 {
-  rslt = new String(lhsVal + rhsVal);
+  rslt = lhsVal.concat(rhsVal);
 }
 else if (operation.equals(stringAConcat))
 {
-  rslt = new String(lhsVal+ rhsVal);
+  rslt = rhsVal.concat(lhsVal);
 }
 
 response.setContentType("text/html");
 PrintWriter out = response.getWriter();
 PrintHead(out);
-PrintBody(out, lhsStr, rhsStr, rslt.toString());
+PrintBody(out, lhsStr, rhsStr, rslt);
 PrintTail(out);
 }  // End doPost
 
