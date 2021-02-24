@@ -55,7 +55,8 @@ String rhsVal = new String("");
 String operation = request.getParameter("Operation");
 String lhsStr = request.getParameter("LHS");
 String rhsStr = request.getParameter("RHS");
-
+lhsVal = new String(lhsStr);
+rhsVal = new String(rhsStr);
 if (operation.equals(stringBConcat))
 {
   rslt = lhsVal.concat(rhsVal);
