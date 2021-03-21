@@ -14,7 +14,7 @@ import org.jsoup.Jsoup;
 // The @WebServletannotation is used to declare a servlet
 @WebServlet(
         name = "FirstServlet",
-        urlPatterns = {"/Hello"}
+        urlPatterns = {"/Assignment6"}
 )
 
 public class Hello extends HttpServlet // Inheriting from HttpServlet makes this a servlet
