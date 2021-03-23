@@ -78,8 +78,8 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    while (e.hasMoreElements())
    {
       String att_name  = (String) e.nextElement();
-      String att_value = (String) session.getAttribute(att_name);
-      String att_car   = (String) session.getAttribute(att_value);
+      String att_value = (String) e.nextElement();
+      String att_car   = (String) session.getAttribute(att_name);
 
       out.print  ("<br><b>Name:</b> ");
       out.println(att_name);
