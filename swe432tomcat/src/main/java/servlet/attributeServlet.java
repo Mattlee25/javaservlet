@@ -3,10 +3,16 @@
 // Import Servlet Libraries
 import javax.servlet.*;
 import javax.servlet.http.*;
+import javax.servlet.annotation.WebServlet;
 
 // Import Java Libraries
 import java.io.*;
 import java.util.Enumeration;
+
+@WebServlet(
+        name = "Attribute",
+        urlPatterns = {"/attributeServlet"}
+)
 
 public class attributeServlet extends HttpServlet
 {
