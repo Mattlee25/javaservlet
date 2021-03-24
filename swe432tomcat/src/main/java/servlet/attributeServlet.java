@@ -27,6 +27,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    String car    = request.getParameter("attrib_car");
    String carValue = request.getParameter("attrib_carValue");
    String remove = request.getParameter("attrib_remove");
+   String action = request.getParameter("action");
 
    if (remove != null && remove.equals("on"))
    {
