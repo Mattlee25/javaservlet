@@ -46,15 +46,15 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
 
-   if (action != null && action.equals("invalidate"))
-   {  // Called from the invalidate button, kill the session.
+     // Called from the invalidate button, kill the session.
       // Get session object
       HttpSession session = request.getSession();
       session.invalidate();
 
       response.setContentType("text/html");
       PrintWriter out = response.getWriter();
-
+      if (action != null && action.equals("invalidate"))
+   {
       out.println("<html>");
       out.println("<head>");
       out.println(" <title>Session lifecycle</title>");
