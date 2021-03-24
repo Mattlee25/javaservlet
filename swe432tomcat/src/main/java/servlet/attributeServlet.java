@@ -48,11 +48,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
      // Called from the invalidate button, kill the session.
       // Get session object
-      HttpSession session = request.getSession();
-      session.invalidate();
-
-      response.setContentType("text/html");
-      PrintWriter out = response.getWriter();
+      
       if (action != null && action.equals("invalidate"))
    {
       HttpSession session = request.getSession();
