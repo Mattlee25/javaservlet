@@ -105,7 +105,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
            out.print  ("<br><br><a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet?action=invalidate\">");
            out.println("Invalidate the session</a>");
-           out.print  ("<br><a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet\">");
+           out.print  ("<br><a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet\"><br>");
            out.println("Reload this page</a>");
 
            out.println("Attributes in this session:");
