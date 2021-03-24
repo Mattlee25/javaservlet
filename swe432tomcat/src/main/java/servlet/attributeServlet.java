@@ -55,6 +55,10 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
       PrintWriter out = response.getWriter();
       if (action != null && action.equals("invalidate"))
    {
+      HttpSession session = request.getSession();
+
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
       out.println("<html>");
       out.println("<head>");
       out.println(" <title>Session lifecycle</title>");
@@ -66,14 +70,13 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
 
       // Create a link so the user can create a new session.
       // The link will have a parameter builtin
-      String lifeCycleURL = "/offutt/servlet/sessionLifeCycle";
       out.println("<a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet?action=newSession\">");
       out.println("Create new session</A>");
 
       out.println("</body>");
       out.println("</html>");
       out.close();
-   } else {
+   } 
            out.println("<html>");
            // no-cache lets the page reload by clicking on the reload link
            out.println("<meta http-equiv=\"Pragma\" content=\"no-cache\">");
@@ -113,7 +116,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
            out.println("Reload this page</a>");
 
            out.println("Attributes in this session:");
-   }
+   
    Enumeration e = session.getAttributeNames();
    while (e.hasMoreElements())
    {
