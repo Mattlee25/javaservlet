@@ -45,40 +45,74 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
    response.setContentType("text/html");
    PrintWriter out = response.getWriter();
 
-   out.println("<html>");
-   // no-cache lets the page reload by clicking on the reload link
-   out.println("<meta http-equiv=\"Pragma\" content=\"no-cache\">");
-   out.println("<head>");
-   out.println(" <title>Session lifecycle</title>");
-   out.println("</head>");
-   out.println("");
+   if (action != null && action.equals("invalidate"))
+   {  // Called from the invalidate button, kill the session.
+      // Get session object
+      HttpSession session = request.getSession();
+      session.invalidate();
 
-   out.println("<body>");
-   out.println("<h1><center>Session attributes</center></h1>");
+      response.setContentType("text/html");
+      PrintWriter out = response.getWriter();
 
-   out.println("Enter name and value and car of an attribute");
+      out.println("<html>");
+      out.println("<head>");
+      out.println(" <title>Session lifecycle</title>");
+      out.println("</head>");
+      out.println("");
+      out.println("<body>");
 
-   // String url = response.encodeURL ("offutt/servlet/attributeServlet");
-   String url = response.encodeURL("attributeServlet");
-   out.println("<form action=\"" + url + "\" method=\"GET\">");
-   out.println(" Name: ");
-   out.println(" <input type=\"text\" size=\"10\" name=\"attrib_name\">");
+      out.println("<p>Your session has been invalidated.</P>");
 
-   out.println(" Value: ");
-   out.println(" <input type=\"text\" size=\"10\" name=\"attrib_value\">");
+      // Create a link so the user can create a new session.
+      // The link will have a parameter builtin
+      String lifeCycleURL = "/offutt/servlet/sessionLifeCycle";
+      out.println("<a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet?action=newSession\">");
+      out.println("Create new session</A>");
 
-   out.println(" Car: ");
-   out.println(" <input type=\"text\" size=\"10\" name=\"attrib_car\">");
-   
-   out.println(" Car value: ");
-   out.println(" <input type=\"text\" size=\"10\" name=\"attrib_carValue\">");
+      out.println("</body>");
+      out.println("</html>");
+      out.close();
+   } else {
+           out.println("<html>");
+           // no-cache lets the page reload by clicking on the reload link
+           out.println("<meta http-equiv=\"Pragma\" content=\"no-cache\">");
+           out.println("<head>");
+           out.println(" <title>Session lifecycle</title>");
+           out.println("</head>");
+           out.println("");
 
-   out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
-   out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
-   out.println("</form>");
-   out.println("<hr>");
+           out.println("<body>");
+           out.println("<h1><center>Session attributes</center></h1>");
 
-   out.println("Attributes in this session:");
+           out.println("Enter name and value and car of an attribute");
+
+           // String url = response.encodeURL ("offutt/servlet/attributeServlet");
+           String url = response.encodeURL("attributeServlet");
+           out.println("<form action=\"" + url + "\" method=\"GET\">");
+           out.println(" Name: ");
+           out.println(" <input type=\"text\" size=\"10\" name=\"attrib_name\">");
+
+           out.println(" Value: ");
+           out.println(" <input type=\"text\" size=\"10\" name=\"attrib_value\">");
+
+           out.println(" Car: ");
+           out.println(" <input type=\"text\" size=\"10\" name=\"attrib_car\">");
+
+           out.println(" Car value: ");
+           out.println(" <input type=\"text\" size=\"10\" name=\"attrib_carValue\">");
+
+           out.println(" <br><input type=\"checkbox\" name=\"attrib_remove\">Remove");
+           out.println(" <input type=\"submit\" name=\"update\" value=\"Update\">");
+           out.println("</form>");
+           out.println("<hr>");
+
+           out.print  ("<br><br><a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet?action=invalidate\">");
+           out.println("Invalidate the session</a>");
+           out.print  ("<br><a href=\"https://java-servlet-assignment.herokuapp.com/attributeServlet\">");
+           out.println("Reload this page</a>");
+
+           out.println("Attributes in this session:");
+   }
    Enumeration e = session.getAttributeNames();
    while (e.hasMoreElements())
    {
