@@ -51,10 +51,7 @@ public void doGet (HttpServletRequest request, HttpServletResponse response)
       
       if (action != null && action.equals("invalidate"))
    {
-      HttpSession session = request.getSession();
-
-      response.setContentType("text/html");
-      PrintWriter out = response.getWriter();
+      
       out.println("<html>");
       out.println("<head>");
       out.println(" <title>Session lifecycle</title>");
