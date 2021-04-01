@@ -22,7 +22,7 @@ public class ServletPersistentPost extends HttpServlet {
     PrintWriter out = response.getWriter();
     response.setContentType("text/html");
     String name = request.getParameter("submit");
-    if (name == "") {
+    if (name != "submission") {
         out.println("<body style=\"text-align:center;\">");
         out.println("<h1>Homework 7</h1>");
         out.println("<h3>Group members: Raul Puza, Antonio Stockel, Matthew Lee</h3>");
