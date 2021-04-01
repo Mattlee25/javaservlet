@@ -15,7 +15,7 @@
 <strong>Current Time is</strong>: <%=new Date() %>
 <p>Try a: </p>
 
-<button onclick="window.location.assign(servletURL+'/HelloPersistent');">Hello Persistent</button>
+<button onclick="window.location.assign(servletURL+'/ServletPersistentPost');">Hello Persistent</button>
 <button onclick="window.location.assign(servletURL+'/attributeServlet');">Attribute Servlet</button>
 <button onclick="window.location.assign(servletURL+'/twoButtons');">My Two Buttons</button>
 <button onclick="window.location.assign(servletURL+'/Hello');">SWE 432 in-class-3</button>
