@@ -97,7 +97,7 @@ public class HelloPersistent extends HttpServlet // Inheriting from HttpServlet 
     }
     private void printBody(PrintWriter out, String text,String box1, String box2, String box3, String box4, String box5){
         out.println("<body style=\"text-align:center;\">");
-        out.println("<h1>Homework 6</h1>");
+        out.println("<h1>Homework 7</h1>");
         out.println("<h3>Group members: Raul Puza, Antonio Stockel, Matthew Lee</h3>");
         out.println("<div style=\"display:inline-block;width:400px;background-color:rgb(187,187,187);border-radius:5px;padding:10px0;margin:50px0;\">");
         out.println("<form method=\"post\" style=\"margin:20px0;width:50%;display:inline-block;\">");// action=\"https://cs.gmu.edu:8443/offutt/servlet/formHandler\">");
