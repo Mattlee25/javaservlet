@@ -27,7 +27,7 @@ public class ServletPersistentPost extends HttpServlet {
         out.println("<div style=\"display:inline-block;width:400px;background-color:rgb(187,187,187);border-radius:5px;padding:10px0;margin:50px0;\">");
         out.println("<form method=\"post\" style=\"margin:20px0;width:50%;display:inline-block;\">");// action=\"https://cs.gmu.edu:8443/offutt/servlet/formHandler\">");
         out.println("<h4>Input multiple strings with a space in between</h4>");
-        out.println("<textarea name=\"array\" id=\"array\" value=\""+ text +"\" style=\"margin-top:10px;border:none;width:100%;height:100px;\"></textarea><br>");
+        out.println("<textarea name=\"array\" id=\"array\" value=\"\" style=\"margin-top:10px;border:none;width:100%;height:100px;\"></textarea><br>");
         out.println("<button name=\"submit\" value=\"\" type=\"submit\" onClick=\"display()\" style=\"float:left;\">submit</button>");
         out.println("<button name=\"submit\" value=\"entries\"type=\"submit\" onClick=\"display()\" style=\"float:right;\">entries</button>");
         out.println("<button name=\"submit\" value=\"clear\"type=\"submit\" onClick=\"display()\" style=\"float:right;\">clear file</button>");
